@@ -43,4 +43,9 @@ public class BankingOperationsHandler {
                 .body(bankingOperationService.reaconciliateBankingOperations(bankingOperationFlux,Double.parseDouble(amountRange.orElse("0.2")),Integer.parseInt(hoursRange.orElse("1"))),BankingOperation.class);
     }
 
+    public Mono<ServerResponse> hello(ServerRequest serverRequest) {
+        String hello = "HelloWorld";
+        return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN)
+                .body(hello,String.class);
+    }
 }

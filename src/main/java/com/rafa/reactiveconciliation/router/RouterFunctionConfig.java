@@ -11,7 +11,8 @@ public class RouterFunctionConfig {
     @Bean
     public RouterFunction<ServerResponse> routes(BankingOperationsHandler bankingOperationsHandler){
         return RouterFunctions
-                .route(RequestPredicates.GET("/bankingOperations"),
+                .route(RequestPredicates.GET(""),bankingOperationsHandler::hello)
+                .andRoute(RequestPredicates.GET("/bankingOperations"),
                         bankingOperationsHandler::list)
                 .andRoute(RequestPredicates.POST("/bankingOperations"), bankingOperationsHandler::create)
                 .andRoute(RequestPredicates.POST("/bankingOperations/reconciliate"), bankingOperationsHandler::reconciliate);
