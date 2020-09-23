@@ -42,8 +42,7 @@ public class BankingOperationsHandler {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(bankingOperationService.reaconciliateBankingOperations(bankingOperationFlux,Double.parseDouble(amountRange.orElse("0.2")),Integer.parseInt(hoursRange.orElse("1"))),BankingOperation.class);
     }
-
-    public Mono<ServerResponse> hello(ServerRequest serverRequest) {
+    public Mono<ServerResponse> hello(ServerRequest request) {
         return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN)
                 .body("HelloWorld",String.class);
     }
