@@ -44,8 +44,7 @@ public class BankingOperationsHandler {
     }
 
     public Mono<ServerResponse> hello(ServerRequest serverRequest) {
-        String hello = "HelloWorld";
         return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN)
-                .body(hello,String.class);
+                .body("HelloWorld",String.class);
     }
 }

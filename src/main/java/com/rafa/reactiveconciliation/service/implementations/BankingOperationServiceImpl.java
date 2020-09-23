@@ -4,7 +4,6 @@ import com.rafa.reactiveconciliation.domain.BankingOperation;
 import com.rafa.reactiveconciliation.repositories.BankingOperationReactiveRepository;
 import com.rafa.reactiveconciliation.service.BankingOperationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
